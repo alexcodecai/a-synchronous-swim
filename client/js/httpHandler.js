@@ -1,7 +1,24 @@
 (function() {
 
   const serverUrl = 'http://127.0.0.1:3000';
+  const getRequest = () => {$.ajax({
+    type: 'GET',
+    url: serverUrl,
+    data: null,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: (command) => {
+     // var direction = ['up','down','left','right'];
+      //var command = direction[Math.floor(Math.random() * 4)];
+        SwimTeam.move(command);
+    }
+  });
 
+}
+// setInterval(getRequest, Math.random() * 7500)
+// SwimTeam.move(messageFromServer)
+// We need a listener? And if so we need to know where to put it.
   //
   // TODO: build the swim command fetcher here
   //
@@ -17,7 +34,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,

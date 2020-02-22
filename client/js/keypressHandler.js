@@ -7,4 +7,4 @@ $('body').on('keydown', (event) => {
   }
 });
 
-console.log('Client is running in the browser!');
+console.log('Client iz run gud in browser!');
