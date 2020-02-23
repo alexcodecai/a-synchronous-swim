@@ -15,10 +15,14 @@ module.exports.initialize = (queue) => {
 module.exports.router = (req, res, next = ()=>{}) => {
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
    //var command = ['up', 'down','right','left'];
-  res.writeHead(200, headers);
+
+   res.writeHead(200, headers);
 
   //res.end(command);
   if(req.method === 'GET'){
+    //initialize(messages);
+    //console.log('firstelement ', firstElement.dequeue());
+    console.log('messagesQue: ', firstElement.messages)
     res.end(firstElement.dequeue());
   } else {
       res.end();
